@@ -23,4 +23,4 @@ primary_region = "sin"
 
 [[mounts]]
   source = "proxitok"
-  destination = "/cache"
+  destination = "/var/www/html/cache"
