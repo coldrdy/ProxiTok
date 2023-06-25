@@ -1,0 +1,26 @@
+# fly.toml app configuration file generated for proxitok on 2023-06-25T20:14:20+07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "proxitok"
+primary_region = "sin"
+
+[env]
+  API_SIGNER="remote"
+  API_SIGNER_URL="https://sign.tt.wkwkwk.fun/api/signature"
+  API_TEST_ENDPOINT=true
+  API_CACHE="redis"
+  USER_AGENT="Mozilla/5.0 (Android 12; Mobile; rv:109.0) Gecko/109.0 Firefox/109.0"
+  LATTE_CACHE="/cache"
+
+[http_service]
+  internal_port = 80
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[mounts]]
+  source = "proxitok"
+  destination = "/cache"
